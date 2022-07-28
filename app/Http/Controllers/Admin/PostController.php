@@ -78,6 +78,10 @@ class PostController extends Controller
     // Remove the specified resource from storage.
     public function destroy(Post $post)
     {
-        //
+        if(Auth::id() != $post->user_id) abort(401);
+
+        $post->tags()->detach();
+        $post->delete();
+        return redirect()->route('admin.posts.index')->with('deleted', 'Il post {{ $post->title }} è stato eliminato');
     }
 }

@@ -64,7 +64,12 @@
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
+        <div id="root">
+
+        </div>
+        
+        <script src="{{ asset('js/front.js') }}"></script>
+        <!-- <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
@@ -84,6 +89,6 @@
                     Boolpress (coming soon...)
                 </div>
             </div>
-        </div>
+        </div> -->
     </body>
 </html>
